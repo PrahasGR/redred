@@ -1,35 +1,150 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mission: Impossible — The Impossible Protocol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission: Impossible — The Impossible Protocol (Archive)</title>
   <style>
-    body{font-family: 'Helvetica Neue', Arial, sans-serif;background:#0b0f1a;color:#e6eef8;margin:24px;}
-    .card{max-width:900px;margin:0 auto;background:#071226;padding:28px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.6);}
-    h1{color:#ffce00;text-align:center}
-    p{line-height:1.6;color:#cfe8ff}
-    .hint{background:#08121b;border-left:6px solid #ff4d4d;padding:16px;border-radius:8px;margin-top:22px}
-    code{background:#061019;padding:4px 6px;border-radius:4px;color:#9be6ff}
+    :root{
+      --bg:#071226; --card:#0b1730; --accent:#ffce00; --muted:#98b7d6; --danger:#ff4d4d;
+      --panel:#081726; --glass:rgba(255,255,255,0.03);
+    }
+    body{
+      margin:18px;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      background:linear-gradient(180deg,#02030a 0%,#071226 100%);
+      color:#e6eef8;
+    }
+    .wrap{max-width:1100px;margin:0 auto;}
+    .header{background:linear-gradient(90deg,#071226,#091628);padding:28px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.6);margin-bottom:18px}
+    h1{color:var(--accent);margin:0;font-size:28px;text-align:center}
+    p.lead{color:var(--muted);text-align:center;margin-top:8px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    .card{background:linear-gradient(180deg,var(--card),#071226);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(0,0,0,.5);}
+    .card h3{margin:0 0 8px 0;color:#9be6ff}
+    .muted{color:var(--muted);font-size:0.95rem}
+    .hint{background:var(--panel);padding:12px;border-radius:8px;border-left:6px solid var(--danger);color:#ffd8c2}
+    .fake-flag{background:linear-gradient(90deg,#131a2a,#0c1521);padding:10px;border-radius:8px;border:1px dashed rgba(255,255,255,0.04);font-weight:700; color:#ffb3b3}
+    .code{background:#061019;padding:12px;border-radius:6px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace; font-size:0.95rem; color:#9be6ff; overflow:auto}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#071226;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;font-weight:700}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 12px;border-radius:6px;cursor:pointer}
+    .decoy{background:linear-gradient(90deg,#05131f,#071226);padding:8px;border-radius:6px;border-left:4px solid #2fb5ff;color:#bfeeff}
+    .spoiler{background:#061019;border-radius:6px;padding:10px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    footer{margin-top:18px;color:var(--muted);text-align:center}
+    /* collapsible */
+    details{background:var(--glass);padding:10px;border-radius:8px;color:var(--muted);margin-top:12px}
+    details summary{cursor:pointer;font-weight:700;color:#9be6ff}
+    /* misdirection visuals */
+    .ticker{background:#061019;padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.02);color:#9be6ff;font-family:ui-monospace;white-space:nowrap;overflow:hidden}
+    .panel-noise{height:8px;background:linear-gradient(90deg,#0b2236,#071226,#0b2236);border-radius:10px;margin:8px 0}
+    .alert{padding:10px;border-radius:8px;background:rgba(255,77,77,0.06);border:1px solid rgba(255,77,77,0.08);color:#ffb3b3}
+    .fake-console{background:#000814;padding:12px;border-radius:6px;color:#6cf; font-family:ui-monospace; font-size:0.9rem; max-height:140px; overflow:auto}
+    .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.8rem;margin-right:6px}
+    /* mobile */
+    @media(max-width:880px){ .grid{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Mission: Impossible — The Impossible Protocol</h1>
-    <p>The IMF has lost a secure letter. Ethan Hunt suspects the letter is hidden inside the agency's own briefing page. Your mission, should you choose to accept it, is to locate the hidden flag and proceed to the next mission.</p>
+  <div class="wrap">
+    <div class="header">
+      <h1>Mission: Impossible — The Impossible Protocol</h1>
+      <p class="lead">Classified archive — visual briefing. Everything is noisy by design. Trust your instincts, not the ink.</p>
+    </div>
 
-    <p>Clues you have found so far:</p>
-    <ol>
-      <li>Agent notes mention "protocols" and "a cipher only visible to the initiated."</li>
-      <li>There is a <em>commented</em> note in the source about numbers and steps.</li>
-      <li>Not everything is where it appears — sometimes the path is encoded.</li>
-    </ol>
+    <div class="grid">
+      <!-- Primary card -->
+      <div class="card">
+        <h3>Executive Brief</h3>
+        <p class="muted">Ethan Hunt suspects the secure letter is hidden inside the archive. Many artifacts were blurred intentionally. Look everywhere — except where instructed to look.</p>
 
+        <div class="panel-noise" aria-hidden="true"></div>
 
+        <div class="hint">
+          <strong>Note:</strong> some items are decoys. Some decoys are gifts. Some gifts are decoys.
+        </div>
 
-  </div>
+        <div style="margin-top:10px" class="row">
+          <span class="tag">#archive</span><span class="tag">#protocol</span><span class="tag">#sealed</span><span class="tag">#decoy</span>
+        </div>
 
-  <!--
+        <details>
+          <summary>Top secret logs (click to reveal — may be theatrical)</summary>
+          <div class="spoiler">
+            <p class="small">The top secret logs were redacted with candy. The candy is not edible. The first page smells faintly of radish.</p>
+            <div class="fake-console">
+              $ cat /dev/secret-briefing
+              <br>STATUS: ARCHIVE-LOCKED
+              <br>HINTS_COUNT=23
+              <br>LAST_AGENT=D. HUNT (INACTIVE)
+              <br>NOTE: "the stapler knows the schedule"
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Lots of red herring blocks -->
+      <div class="card">
+        <h3>Red Herrings</h3>
+        <p class="muted">Every block below is designed to look important. Most are theatrics. Some are interactive illusions.</p>
+
+        <div class="grid-3" style="margin-top:12px">
+          <div class="decoy">
+            <strong>Fake flag</strong>
+            <div class="fake-flag" style="margin-top:8px">MI{REDACTED_001}</div>
+            <div class="small" style="margin-top:8px">Note: this one is dramatic and wrong.</div>
+          </div>
+
+          <div class="decoy">
+            <strong>Encoded fragment</strong>
+            <div class="code" style="margin-top:8px">4d49217a65726f3a204a551f</div>
+            <div class="small" style="margin-top:6px">looks like hex, maybe not.</div>
+          </div>
+
+          <div class="decoy">
+            <strong>Base64 tease</strong>
+            <div class="code" style="margin-top:8px">VHJ5IHRoaXM6IEZBTUUsIE5PVCBTRUVM</div>
+            <div class="small" style="margin-top:6px">a polite suggestion to click elsewhere.</div>
+          </div>
+        </div>
+
+        <details>
+          <summary>Click for layered nonsense</summary>
+          <div style="margin-top:8px">
+            <p class="small">A stack of images, one of which is a thumbnail of a clue. Alternatively, it's a picture of a stamp.</p>
+            <div class="code">[image-placeholder: the stamp that never existed]</div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:14px">
+      <div class="card">
+        <h3>Protocol Sections (Lots)</h3>
+        <p class="muted">The archive splits the briefing into many protocol sections. We display a few to suggest depth.</p>
+
+        <div style="margin-top:10px" class="row">
+          <div style="flex:1">
+            <div class="card" style="padding:10px">
+              <strong>Section A — The Stapler Note</strong>
+              <p class="small">"BLUE STAPLER => NORTH" is stamped in faux-ink. It probably means the stapler is a compass. Or a compass is a stapler.</p>
+              <div class="code">♢ compass: 07°NZ</div>
+            </div>
+          </div>
+
+          <div style="flex:1">
+            <div class="card" style="padding:10px">
+              <strong>Section B — The Marmalade Clock</strong>
+              <p class="small">This clock stubbornly refuses to point to 12. It prefers odd tea times and tells jokes that rhyme with 'longitude'.</p>
+              <div class="code">tick→tock→tick? (approx)</div>
+            </div>
+          </div>
+        </div>
+        <!--
     Mission notes (hidden). Keep this secret.
 
     Protocol Theta-Sketch: In the event that tea leaves and unspoken memos collide, the operative should remember that the blue stapler is not a stapler but a compass for the idle mind. When dusk knits shadows into the corners of the corridor, a single sock left on the banister denotes approval from nobody in particular and a deliberative wink from fortune. The marmalade clock, which is not a clock, keeps time only for those who whisper to the wallpaper; it ticks backward every third Thursday and offers free advice on gardening.
@@ -59,13 +174,159 @@
   -->
 
 
+        <div style="margin-top:12px">
+          <details>
+            <summary>Show annex (for authenticity)</summary>
+            <div class="spoiler" style="margin-top:8px">
+              <p class="small">ANNEX: "If you find an envelope hum, stamp 'maybe' and store horizontally." Quality advice from an imaginary archivist.</p>
+              <div class="fake-console">ARCHIVIST> advise("stamp 'maybe'") -> DONE</div>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Apparatus</h3>
+        <p class="muted">Fake tools to play with — they don't open anything (that's the point).</p>
+
+        <div style="margin-top:10px" class="row">
+          <button class="btn" onclick="alert('The decoder is out of tea — try again.')">Launch Decoder</button>
+          <button class="btn-ghost" onclick="document.getElementById('console').innerText += '\\n> ping staple.local'">Ping Stapler</button>
+        </div>
+
+        <div id="console" class="fake-console" style="margin-top:12px">
+> welcome to the archive toolbox
+        </div>
+
+        <details style="margin-top:8px">
+          <summary>Calibration sequence (do not trust)</summary>
+          <div class="spoiler">
+            <ol>
+              <li>Sing to the lamp (one verse)</li>
+              <li>Measure the spoon for dignity</li>
+              <li>Fold the napkin twice if weather insists</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card">
+        <h3>Archive Evidence (visual noise)</h3>
+        <p class="small">A collection of 'evidence' tiles, each intended to distract.</p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <div class="decoy code" style="width:calc(33% - 8px)">BIN: 0101011010...</div>
+          <div class="decoy code" style="width:calc(33% - 8px)">HEX: deadbeefcafebabe</div>
+          <div class="decoy code" style="width:calc(33% - 8px)">ROT13: GUNG VF ABG GUR PNVAT</div>
+        </div>
+
+        <div style="margin-top:12px" class="alert">
+          <strong>Attention:</strong> The archive cycles decoy hints every hour. If you find something convincing, it is likely a decoy.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Probability & Misleading Graphs</h3>
+        <p class="small">A bogus progress bar to imply hidden depth.</p>
+        <div class="panel-noise" style="height:14px"></div>
+        <div style="margin-top:8px" class="code">PROGRESS: ██████░░░░ 60% (of theatrical intrigue)</div>
+
+        <details style="margin-top:8px">
+          <summary>Show fake stats</summary>
+          <div style="margin-top:8px">
+            <div class="small">Agents fooled: 124</div>
+            <div class="small">Red herrings planted: 32</div>
+            <div class="small">True clues: 1 (handled with care)</div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div style="margin-top:18px" class="card">
+      <h3>Console of Confusion</h3>
+      <p class="small">Type-ish interactions (display only). These are theatrical and intentionally misleading.</p>
+
+      <div class="code" id="fake-term">
+        > echo "MISSION START"
+        <br>> ls /archive
+        <br>flag.txt  README.decoy  onion-layer-1  onion-layer-2
+        <br>> cat flag.txt
+        <br>MI{TRY-THIS-FALSE}
+      </div>
 
+      <details style="margin-top:10px">
+        <summary>Inspect deep decoy</summary>
+        <div class="spoiler small" style="margin-top:8px">
+          The word "onion" appears a lot in decoys. Real onions cry; fake onions complain.
+        </div>
+      </details>
+    </div>
 
+    <!-- many more collapsible decoy blocks to overwhelm -->
+    <div style="margin-top:18px">
+      <div class="grid">
+        <div class="card">
+          <h3>Faux Transcript</h3>
+          <p class="small">An edited transcript with line numbers and purposeful redactions.</p>
+          <div class="code">[01] AGT: "We hid the key under the..."<br>[02] AGT: "—redacted—"<br>[03] AGT: "Refer to page 42 of the sandwich manual"</div>
+        </div>
 
+        <div class="card">
+          <h3>Archive Map (decorative)</h3>
+          <p class="small">A decorative doodle of rooms and arrows. The arrows point everywhere.</p>
+          <div class="code">[entrance] -> [lobby] -> [cupboard] -> [attic] -> [nowhere]</div>
+        </div>
+      </div>
 
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h3>Fake Puzzle — Too Easy</h3>
+          <p class="small">Solve for fun, then ignore the result.</p>
+          <div class="code">SOLUTION: 42</div>
+        </div>
+        <div class="card">
+          <h3>Fake Puzzle — Hard But Useless</h3>
+          <div class="code">Q: Which spoon shares its ego with a hat?<br>A: The one that hums at midnight</div>
+        </div>
+      </div>
+    </div>
 
+    <footer>
+      <div class="small">This page is intentionally noisy. The only trustworthy source is the authorized solution document held by the mission controller. Any 'flag'-like strings here are red herrings.</div>
+    </footer>
+  </div>
 
+  <script>
+    // small interactive theater: rotate fake flags and console noise
+    (function(){
+      const fakeFlags = ['MI{REDACTED_001}','MI{TRY-THIS-FALSE}','MI{NOPE_NOT_THIS}','MI{DECOY-ALPHA}','MI{THE-FLAG-IS-A-SANDWICH}'];
+      let idx = 0;
+      setInterval(()=> {
+        const nodes = document.querySelectorAll('.fake-flag');
+        nodes.forEach(n => n.textContent = fakeFlags[idx % fakeFlags.length]);
+        idx++;
+      }, 2400);
 
+      const consoleNode = document.getElementById('fake-term');
+      const extra = [
+        '> sudo open-box --please',
+        '> curl -s http://localhost/decoy',
+        '> decode --format=hex onion-layer-1',
+        '> echo "note: try the sandwich"'
+      ];
+      let j=0;
+      setInterval(()=>{
+        consoleNode.innerHTML += '<br>' + extra[j % extra.length];
+        j++;
+        if(consoleNode.innerHTML.split('<br>').length > 40){
+          consoleNode.innerHTML = consoleNode.innerHTML.split('<br>').slice(-30).join('<br>');
+        }
+      }, 3000);
+    })();
+  </script>
+</body>
 
 
 
@@ -126,56 +387,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   <!--
     68747470733a2f2f7072616861737367722e6769746875622e696f2f636f64657265642f6d697373696f6e32
 
   -->
-</body>
 </html>
