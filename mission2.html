@@ -3,32 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mission 2 — The Impossible Cipher</title>
+  <title>Mission 2 — The Impossible Protocol</title>
   <style>
-    body{font-family:Georgia, serif;background:#0b0f1a;color:#f0f6ff;padding:36px}
-    .box{max-width:820px;margin:0 auto;background:#081226;padding:28px;border-radius:10px}
-    h2{color:#ffce00}
-    pre{background:#061019;padding:12px;border-radius:6px;color:#9be6ff}
+    body{font-family: 'Georgia', serif; background:#050616; color:#dfeeff; padding:32px;}
+    .panel{max-width:960px; margin:0 auto; background:linear-gradient(180deg,#071226,#06121b); padding:28px; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,.6);}
+    h1{color:#ffce00; text-align:center}
+    h3{color:#9be6ff}
+    p{line-height:1.6}
+    .puzzle{background:#081726; border-left:6px solid #ff4d4d; padding:14px; margin:16px 0; border-radius:8px}
+    .note{color:#9aaecf; font-size:0.95rem}
+    footer{margin-top:18px; color:#8aa8d1; font-size:0.9rem; text-align:center}
+    code{background:#061019;padding:4px 6px;border-radius:4px;color:#9be6ff}
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Mission 2 — The Impossible Cipher</h2>
-    <p>Well done finding the encoded link. The final flag is hidden with a small cipher below. Use the small-letter substitution (a->z, b->y, c->x, etc.) followed by reversing the resulting text to reveal the flag.</p>
+  <div class="panel">
+    <h1>IMF — Briefing: Protocol Delta</h1>
+    <p>Field agent, this encrypted briefing contains six sealed items from the archive. All have been anonymized — their truths must be coaxed out by observation and patience. Nothing is printed in plain type. Proceed carefully.</p>
+    
+    <div class="puzzle">
+      <h3>Item I — The Whispering Ledger</h3>
+      <p>A ledger records a single sequence of fractions: the first page lists a single entry, the second page two entries, the third page three, and so on. The archived note reads: <em>collect pages until the total sum of the ledger exceeds one point six nine</em>. How many pages will the operative need to consult before the threshold is surpassed?</p>
+      <p class="note">(The ledger's entries follow the pattern of unit fractions.)</p>
+    </div>
 
-    <p><strong>Cipher text:</strong></p>
-    <pre>gvool: r slnv</pre>
+    <div class="puzzle">
+      <h3>Item II — The Blueprint Shrink</h3>
+      <p>On the wall hangs a hexagonal insignia of the agency. An assistant marked midpoints on each edge and traced the inner figure that connects them. The assistant then whispered: <em>the outer domain is N times the inner domain</em>. Report the integer N the assistant meant.</p>
+      <p class="note">(Both figures are regular and similar in orientation.)</p>
+    </div>
 
-    <p>How to solve:
-      <ul>
-        <li>Apply Atbash substitution (a↔z, b↔y, ...).</li>
-        <li>Reverse the plain text string from step 1.</li>
-      </ul>
-    </p>
+    <div class="puzzle">
+      <h3>Item III — The Three-Key Lock</h3>
+      <p>From the gadget vault there are five colored chips. To arm the alarm you must pick a three-chip sequence and lay them in order. The technician's note forbids immediately repeating the same color. How many distinct arming sequences are possible?</p>
+      <p class="note">(Order matters; repetition allowed except for consecutive identical chips.)</p>
+    </div>
 
-    <p><strong>Final flag format:</strong> <code>MI{...}</code></p>
+    <div class="puzzle">
+      <h3>Item IV — The Dialed Cipher</h3>
+      <p>A circular dial has three tumblers. The briefcase opens when the operator sets the number so that it leaves remainders 2, 3, and 4 when divided by 3, 5, and 7 respectively. The senior operative scribbled, <em>smallest such setting</em>. What integer did they write?</p>
+      <p class="note">(Classic remainder constraints apply.)</p>
+    </div>
+
+    <div class="puzzle">
+      <h3>Item V — The Echo Sequence</h3>
+      <p>A training log begins with two signatures: 3 and 5. Each next signature is the sum of the two previous signatures. The sergeant asks: what number is written at the sixth signature?</p>
+      <p class="note">(Start positions are given; standard additive recurrence.)</p>
+    </div>
+
+    <div class="puzzle">
+      <h3>Item VI — The Paired Suits</h3>
+      <p>In the mess, two cards were drawn from a deck for a quick wager. The underling wrote: <em>both matched the same guild</em>. For the bookkeeper's ledger they kept the numerator of the reduced chance of such a draw. What numerator did they note?</p>
+      <p class="note">(A standard 52-card deck is implied; suits = guilds.)</p>
+    </div>
+
+    <footer>All items are sealed. The archive keeper will provide the authorized decryption key (separately) to assemble the final access token.</footer>
   </div>
-
-  <!-- Optional: chain more missions here by adding another encoded string. -->
 </body>
 </html>
