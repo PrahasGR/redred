@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mission: Impossible — The Impossible Protocol</title>
+  <style>
+    body{font-family: 'Helvetica Neue', Arial, sans-serif;background:#0b0f1a;color:#e6eef8;margin:24px;}
+    .card{max-width:900px;margin:0 auto;background:#071226;padding:28px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.6);}
+    h1{color:#ffce00;text-align:center}
+    p{line-height:1.6;color:#cfe8ff}
+    .hint{background:#08121b;border-left:6px solid #ff4d4d;padding:16px;border-radius:8px;margin-top:22px}
+    code{background:#061019;padding:4px 6px;border-radius:4px;color:#9be6ff}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Mission: Impossible — The Impossible Protocol</h1>
+    <p>The IMF has lost a secure letter. Ethan Hunt suspects the letter is hidden inside the agency's own briefing page. Your mission, should you choose to accept it, is to locate the hidden flag and proceed to the next mission.</p>
+
+    <p>Clues you have found so far:</p>
+    <ol>
+      <li>Agent notes mention "protocols" and "a cipher only visible to the initiated."</li>
+      <li>There is a <em>commented</em> note in the source about numbers and steps.</li>
+      <li>Not everything is where it appears — sometimes the path is encoded.</li>
+    </ol>
+
+    <div class="hint">
+      <p><strong>Agent's whisper:</strong> Inspect the source. Pay special attention to HTML comments and the very end of the file.</p>
+      <p><small>Hint (encoded): look for a hex string hidden in a comment. Decode it to find the URL for the next mission.</small></p>
+    </div>
+
+    <p>If you think you've found the next URL, decode the hex (tools provided below) and visit that page. Good luck — this message will self-destruct in your browser on page refresh. 🙂</p>
+  </div>
+
+  <!--
+    Mission notes (hidden). Keep this secret.
+
+    The operative who hid the next step wrote:
+
+    "Encode the link. Don't put it in plain sight. Put it at the bottom where browsers and lazy eyes ignore."
+
+    Sample encoded link (hex):
+
+    68747470733a2f2f6578616d706c652e636f6d2f6d692d6d697373696f6e2d32
+
+    That's a sample that decodes to:
+    https://example.com/mi-mission-2
+
+    When you host this on YOUR GitHub Pages site, replace the sample hex with the hex for
+    your real URL, for example:
+
+    https://<YOUR_GITHUB_USERNAME>.github.io/mi-ctf/mission2.html
+
+    To create the correct hex string for your final hosted URL, see the Solution Document included.
+  -->
+</body>
+</html>
